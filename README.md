@@ -23,7 +23,7 @@ npm init
 npm install express --save
 ```
 
-Crea un el fichero `index.js` con el siguiente contenido:
+Crea el fichero `index.js` con el siguiente contenido:
 
 ```javascript
 // index.js
