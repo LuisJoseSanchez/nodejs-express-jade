@@ -85,4 +85,32 @@ body
 
 Observa que no se utilizan etiquetas de cierre. Lo que determina cuáles son los bloques que engloban a otros es la indentación.
 
+## Usando Javascript en la plantilla
+
+
+```jade
+<!DOCTYPE html>
+html(lang="es")
+head
+  meta(charset="UTF-8")
+  title Página con Jade
+body
+  h1 Página con Jade
+  //- Este javascript se ejecuta en el servidor
+
+  h2 Usando =
+  - for (var i = 0; i < 10; i++) {
+      = i
+  - }
+
+  h2 Usando p=
+  - for (var i = 0; i < 10; i++) {
+    p= i
+  - }
+
+  h2 Usando &num;
+  - for (var i = 0; i < 10; i++) {
+    span Número: #{i} 
+  - }
+```
 
