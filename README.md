@@ -85,8 +85,8 @@ body
 
 Observa que no se utilizan etiquetas de cierre. Lo que determina cuáles son los bloques que engloban a otros es la indentación.
 
-## Usando Javascript en la plantilla
 
+## Usando Javascript en la plantilla
 
 ```jade
 <!DOCTYPE html>
@@ -113,4 +113,48 @@ body
     span Número: #{i} 
   - }
 ```
+
+## Cómo pasar datos a una plantilla
+
+Fichero javascript con los datos:
+
+```javascript
+// index.js
+
+var express = require('express');
+var app = express();
+
+app.set('view engine', 'jade');
+
+app.get('/', function (req, res) {
+
+var datos = {
+  "nombre": "Aitor",
+  "apellido": "Menta",
+  "telefono": "555 123 456"
+}
+
+  res.render('index', datos);
+});
+
+app.listen(8080);
+```
+
+Plantilla en jade:
+
+```jade
+<!DOCTYPE html>
+html(lang="es")
+head
+  meta(charset="UTF-8")
+  title Página con Jade
+body
+  h2 Datos del empleado
+
+  p.
+    Nombre: #{nombre}#[br]
+    Apellido: #{apellido}#[br]
+    Teléfono: #{telefono}
+```
+
 
