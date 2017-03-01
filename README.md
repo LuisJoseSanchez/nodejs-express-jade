@@ -42,3 +42,47 @@ Ejecuta la aplicación:
 ```console
 node index.js
 ```
+
+
+## "Hola mundo" con Jade
+
+```console
+mkdir hola-mundo-jade
+cd hola-mundo-jade
+npm init
+npm install express --save
+npm install jade --save
+```
+
+Crea el fichero `index.js` con el siguiente contenido:
+
+```javascript
+// index.js
+var express = require('express');
+var app = express();
+
+app.set('view engine', 'jade');
+
+app.get('/', function (req, res) {
+  res.render('index');
+});
+
+app.listen(8080);
+```
+
+Crea la plantilla `index.jade` con el siguiente contenido:
+
+```jade
+<!DOCTYPE html>
+html(lang="es")
+head
+  meta(charset="UTF-8")
+  title Mi primera página con Jade
+body
+  h1 Mi primera página con Jade
+  p ¡Hola mundo! Aquí estoy probando Jade.
+```
+
+Observa que no se utilizan etiquetas de cierre. Lo que determina cuáles son los bloques que engloban a otros es la indentación.
+
+
