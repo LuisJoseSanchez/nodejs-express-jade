@@ -157,4 +157,22 @@ body
     Teléfono: #{telefono}
 ```
 
+## Enlaces en Jade
+
+```jade
+<!DOCTYPE html>
+html(lang="es")
+head
+  meta(charset="UTF-8")
+  title Página con Jade
+body
+  h2 Enlaces de interés
+
+  ul
+    li.
+      Página de #[a(href="https://github.com/LuisJoseSanchez/github-alumnos-daw-1517") 2º DAW]
+    li.
+      #[a(href="https://naltatis.github.io/jade-syntax-docs/") Jade Syntax Documentation] by example
+```
+
 
